@@ -1,0 +1,13 @@
+syntax = "proto3";
+package BiKunTin.cosmo.cosmo;
+
+option go_package = "github.com/BiKunTin/cosmo/x/cosmo/types";
+
+import "gogoproto/gogo.proto";
+
+message Comment {
+  string creator = 1;
+  uint64 id = 2;
+  string body = 3; 
+  string postID = 4; 
+}

@@ -1,0 +1,128 @@
+syntax = "proto3";
+package BiKunTin.cosmo.cosmo;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/BiKunTin/cosmo/x/cosmo/types";
+
+// Msg defines the Msg service.
+service Msg {
+    // this line is used by starport scaffolding # proto/tx/rpc
+  rpc CreateVote(MsgCreateVote) returns (MsgCreateVoteResponse);
+  rpc UpdateVote(MsgUpdateVote) returns (MsgUpdateVoteResponse);
+  rpc DeleteVote(MsgDeleteVote) returns (MsgDeleteVoteResponse);
+  rpc CreatePoll(MsgCreatePoll) returns (MsgCreatePollResponse);
+  rpc UpdatePoll(MsgUpdatePoll) returns (MsgUpdatePollResponse);
+  rpc DeletePoll(MsgDeletePoll) returns (MsgDeletePollResponse);
+  rpc CreateComment(MsgCreateComment) returns (MsgCreateCommentResponse);
+  rpc UpdateComment(MsgUpdateComment) returns (MsgUpdateCommentResponse);
+  rpc DeleteComment(MsgDeleteComment) returns (MsgDeleteCommentResponse);
+  rpc CreatePost(MsgCreatePost) returns (MsgCreatePostResponse);
+  rpc UpdatePost(MsgUpdatePost) returns (MsgUpdatePostResponse);
+  rpc DeletePost(MsgDeletePost) returns (MsgDeletePostResponse);
+}
+
+// this line is used by starport scaffolding # proto/tx/message
+message MsgCreateVote {
+  string creator = 1;
+  string pollID = 2;
+  string option = 3;
+}
+
+message MsgCreateVoteResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateVote {
+  string creator = 1;
+  uint64 id = 2;
+  string pollID = 3;
+  string option = 4;
+}
+
+message MsgUpdateVoteResponse { }
+
+message MsgDeleteVote {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteVoteResponse { }
+
+message MsgCreatePoll {
+  string creator = 1;
+  string title = 2;
+  repeated string options = 3;
+}
+
+message MsgCreatePollResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePoll {
+  string creator = 1;
+  uint64 id = 2;
+  string title = 3;
+  repeated string options = 4;
+}
+
+message MsgUpdatePollResponse { }
+
+message MsgDeletePoll {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePollResponse { }
+
+message MsgCreateComment {
+  string creator = 1;
+  string body = 2;
+  string postID = 3;
+}
+
+message MsgCreateCommentResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateComment {
+  string creator = 1;
+  uint64 id = 2;
+  string body = 3;
+  string postID = 4;
+}
+
+message MsgUpdateCommentResponse { }
+
+message MsgDeleteComment {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteCommentResponse { }
+
+message MsgCreatePost {
+  string creator = 1;
+  string title = 2;
+  string body = 3;
+}
+
+message MsgCreatePostResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePost {
+  string creator = 1;
+  uint64 id = 2;
+  string title = 3;
+  string body = 4;
+}
+
+message MsgUpdatePostResponse { }
+
+message MsgDeletePost {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePostResponse { }
