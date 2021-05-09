@@ -4,33 +4,33 @@ import { StdFee } from "@cosmjs/launchpad";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { Registry, OfflineSigner, EncodeObject, DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { Api } from "./rest";
-import { MsgDeletePost } from "./types/cosmo/tx";
-import { MsgDeleteComment } from "./types/cosmo/tx";
 import { MsgUpdateComment } from "./types/cosmo/tx";
-import { MsgUpdateVote } from "./types/cosmo/tx";
-import { MsgDeleteVote } from "./types/cosmo/tx";
 import { MsgCreatePost } from "./types/cosmo/tx";
-import { MsgDeletePoll } from "./types/cosmo/tx";
-import { MsgCreateComment } from "./types/cosmo/tx";
-import { MsgCreateVote } from "./types/cosmo/tx";
-import { MsgCreatePoll } from "./types/cosmo/tx";
-import { MsgUpdatePoll } from "./types/cosmo/tx";
+import { MsgDeletePost } from "./types/cosmo/tx";
 import { MsgUpdatePost } from "./types/cosmo/tx";
+import { MsgDeletePoll } from "./types/cosmo/tx";
+import { MsgUpdatePoll } from "./types/cosmo/tx";
+import { MsgDeleteVote } from "./types/cosmo/tx";
+import { MsgCreatePoll } from "./types/cosmo/tx";
+import { MsgCreateComment } from "./types/cosmo/tx";
+import { MsgUpdateVote } from "./types/cosmo/tx";
+import { MsgDeleteComment } from "./types/cosmo/tx";
+import { MsgCreateVote } from "./types/cosmo/tx";
 
 
 const types = [
-  ["/BiKunTin.cosmo.cosmo.MsgDeletePost", MsgDeletePost],
-  ["/BiKunTin.cosmo.cosmo.MsgDeleteComment", MsgDeleteComment],
   ["/BiKunTin.cosmo.cosmo.MsgUpdateComment", MsgUpdateComment],
-  ["/BiKunTin.cosmo.cosmo.MsgUpdateVote", MsgUpdateVote],
-  ["/BiKunTin.cosmo.cosmo.MsgDeleteVote", MsgDeleteVote],
   ["/BiKunTin.cosmo.cosmo.MsgCreatePost", MsgCreatePost],
-  ["/BiKunTin.cosmo.cosmo.MsgDeletePoll", MsgDeletePoll],
-  ["/BiKunTin.cosmo.cosmo.MsgCreateComment", MsgCreateComment],
-  ["/BiKunTin.cosmo.cosmo.MsgCreateVote", MsgCreateVote],
-  ["/BiKunTin.cosmo.cosmo.MsgCreatePoll", MsgCreatePoll],
-  ["/BiKunTin.cosmo.cosmo.MsgUpdatePoll", MsgUpdatePoll],
+  ["/BiKunTin.cosmo.cosmo.MsgDeletePost", MsgDeletePost],
   ["/BiKunTin.cosmo.cosmo.MsgUpdatePost", MsgUpdatePost],
+  ["/BiKunTin.cosmo.cosmo.MsgDeletePoll", MsgDeletePoll],
+  ["/BiKunTin.cosmo.cosmo.MsgUpdatePoll", MsgUpdatePoll],
+  ["/BiKunTin.cosmo.cosmo.MsgDeleteVote", MsgDeleteVote],
+  ["/BiKunTin.cosmo.cosmo.MsgCreatePoll", MsgCreatePoll],
+  ["/BiKunTin.cosmo.cosmo.MsgCreateComment", MsgCreateComment],
+  ["/BiKunTin.cosmo.cosmo.MsgUpdateVote", MsgUpdateVote],
+  ["/BiKunTin.cosmo.cosmo.MsgDeleteComment", MsgDeleteComment],
+  ["/BiKunTin.cosmo.cosmo.MsgCreateVote", MsgCreateVote],
   
 ];
 
@@ -58,18 +58,18 @@ const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions =
 
   return {
     signAndBroadcast: (msgs: EncodeObject[], { fee=defaultFee, memo=null }: SignAndBroadcastOptions) => memo?client.signAndBroadcast(address, msgs, fee,memo):client.signAndBroadcast(address, msgs, fee),
-    msgDeletePost: (data: MsgDeletePost): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeletePost", value: data }),
-    msgDeleteComment: (data: MsgDeleteComment): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeleteComment", value: data }),
     msgUpdateComment: (data: MsgUpdateComment): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgUpdateComment", value: data }),
-    msgUpdateVote: (data: MsgUpdateVote): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgUpdateVote", value: data }),
-    msgDeleteVote: (data: MsgDeleteVote): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeleteVote", value: data }),
     msgCreatePost: (data: MsgCreatePost): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgCreatePost", value: data }),
-    msgDeletePoll: (data: MsgDeletePoll): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeletePoll", value: data }),
-    msgCreateComment: (data: MsgCreateComment): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgCreateComment", value: data }),
-    msgCreateVote: (data: MsgCreateVote): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgCreateVote", value: data }),
-    msgCreatePoll: (data: MsgCreatePoll): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgCreatePoll", value: data }),
-    msgUpdatePoll: (data: MsgUpdatePoll): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgUpdatePoll", value: data }),
+    msgDeletePost: (data: MsgDeletePost): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeletePost", value: data }),
     msgUpdatePost: (data: MsgUpdatePost): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgUpdatePost", value: data }),
+    msgDeletePoll: (data: MsgDeletePoll): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeletePoll", value: data }),
+    msgUpdatePoll: (data: MsgUpdatePoll): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgUpdatePoll", value: data }),
+    msgDeleteVote: (data: MsgDeleteVote): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeleteVote", value: data }),
+    msgCreatePoll: (data: MsgCreatePoll): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgCreatePoll", value: data }),
+    msgCreateComment: (data: MsgCreateComment): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgCreateComment", value: data }),
+    msgUpdateVote: (data: MsgUpdateVote): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgUpdateVote", value: data }),
+    msgDeleteComment: (data: MsgDeleteComment): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgDeleteComment", value: data }),
+    msgCreateVote: (data: MsgCreateVote): EncodeObject => ({ typeUrl: "/BiKunTin.cosmo.cosmo.MsgCreateVote", value: data }),
     
   };
 };

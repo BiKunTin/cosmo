@@ -320,7 +320,7 @@ func New(
 	app.EvidenceKeeper = *evidenceKeeper
 
 	app.cosmoKeeper = *cosmokeeper.NewKeeper(
-		appCodec, keys[cosmotypes.StoreKey], keys[cosmotypes.MemStoreKey],
+		appCodec, keys[cosmotypes.StoreKey], keys[cosmotypes.MemStoreKey], app.BankKeeper,
 	)
 
 	// this line is used by starport scaffolding # stargate/app/keeperDefinition
