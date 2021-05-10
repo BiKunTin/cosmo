@@ -19,7 +19,6 @@ body {
 </style>
 
 <script>
-import './scss/app.scss'
 import '@starport/vue/lib/starport-vue.css'
 import Sidebar from './components/Sidebar'
 
